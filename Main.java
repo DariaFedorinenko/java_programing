@@ -1,32 +1,34 @@
 package com.company;
 
+import java.util.List;
+
+
 public class Main {
-
     public static void main(String[] args) {
-        Zoo zoo1 = new Zoo();
-        Zoo zooAnimals = new Zoo("Animals" , "middle" , "only predators" , 45);
-        Zoo zooSweetAnimals = new Zoo("Sweet animals" , "small" , "pets" , 27 , 12);
+        Shop shop = new Shop();
 
-        System.out.println(zoo1.toString());
-        System.out.println(zooAnimals.toString());
-        System.out.println(zooSweetAnimals.toString());
+        shop.addChildGoods(new Diapers("Dada",Age.FORBIRTH, "for girls and boys", Expiration.INDEFINITEY));
+        shop.addChildGoods(new Creams("Hipp", Age.FOR3MONTH, "Germany", Expiration.UPTO4YEARS));
+        shop.addChildGoods(new Porridge("Hipp", Age.FOR6MONTH,"apple", Expiration.UPTO24MONTHS));
+        shop.addChildGoods(new Juices("Bebivita", Age.FOR3MONTH, "orange", Expiration.INDEFINITEY));
+        shop.addChildGoods(new Yogurt("Humana", Age.FOR6MONTH, "strawberry", Expiration.INDEFINITEY));
+        shop.addChildGoods(new Puree("Rudolf", Age.FOR6MONTH, "apple and carrot", Expiration.UPTO24MONTHS));
 
-        Zoo.printStaticSum();
-        zooSweetAnimals.printSum();
+        System.out.println("\nInitial list of the chidren`s goods:");
+        printList(shop.getChildGoodsList());
 
-        zoo1.resetValues("Dela planet" , "big" , "only dog" , 100 , 50);
-        zooSweetAnimals.resetValues("Safary" , "middle" , "predators" , 62 , 42);
-        zooAnimals.setVisitors(10);
+        System.out.println("\nList of the chidren`s goods that have expiration date - 6 month:");
+        System.out.println(shop.findByAge(Age.FOR6MONTH));
+        }
 
-        System.out.println(zoo1.toString());
-        System.out.println(zooAnimals.toString());
-        System.out.println(zooSweetAnimals.toString());
 
-        Zoo.printStaticSum();
-        zoo1.printSum();
+    private static void printList(List<ChildGoods> childGoodsList) {
+        for(ChildGoods childGoods : childGoodsList){
+            System.out.println(childGoods.getName() + ",");
+            System.out.println(ChildGoods.getAge()+ ",");
+            System.out.println(childGoods.getExpiration()+"."+"\n");
+
+        }
     }
 
-    private static class ZooSweetAnimals {
-    }
 }
-
