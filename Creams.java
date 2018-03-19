@@ -1,18 +1,21 @@
-package com.company;
+package ua.lviv.iot.model;
 
-public class Creams extends HygieneProducts{
-    private CreamType  type ;
+import ua.lviv.iot.model.enums.Age;
+import ua.lviv.iot.model.enums.Expiration;
 
-    public Creams(String name, Age age, String produced, Expiration expirationDate ) {
-        super(name , age , produced , expirationDate);
+public class Creams extends HygieneProducts {
+    private Age.CreamType type;
+
+    public Creams(String name, Age age, String produced, Expiration expirationDate) {
+        super(name, age, produced, expirationDate);
     }
 
 
-    public void setType(CreamType type) {
+    public void setType(Age.CreamType type) {
         this.type = type;
     }
 
-    public CreamType getType() {
+    public Age.CreamType getType() {
 
         return type;
     }

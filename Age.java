@@ -1,3 +1,6 @@
-package com.company;
+package ua.lviv.iot.model.enums;
 
-public enum Age { FORBIRTH , FOR3MONTH , FOR6MONTH}
+public enum Age { FORBIRTH , FOR3MONTH , FOR6MONTH;
+
+    public static enum CreamType {FORHANDS , FORTHEFEET , FORTHEFACE }
+}

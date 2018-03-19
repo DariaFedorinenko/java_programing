@@ -1,4 +1,7 @@
-package com.company;
+package ua.lviv.iot.model;
+
+import ua.lviv.iot.model.enums.Age;
+import ua.lviv.iot.model.enums.Expiration;
 
 public abstract class ChildGoods {
     private String name ;
@@ -67,4 +70,6 @@ public abstract class ChildGoods {
     public void setTaste(String taste) {
         this.taste = taste;
     }
+
+
 }
